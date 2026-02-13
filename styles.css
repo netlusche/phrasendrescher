@@ -1,0 +1,296 @@
+:root {
+    /* Color Palette - Light Mode */
+    --bg-color: #f3f4f6;
+    --text-color: #1f2937;
+    --card-bg: #ffffff;
+    --primary-color: #10b981; /* Emerald Green */
+    --primary-hover: #059669;
+    --secondary-color: #e5e7eb;
+    --secondary-hover: #d1d5db;
+    --secondary-text: #374151;
+    --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        /* Color Palette - Dark Mode */
+        --bg-color: #111827;
+        --text-color: #f9fafb;
+        --card-bg: #1f2937;
+        --primary-color: #34d399;
+        --primary-hover: #10b981;
+        --secondary-color: #374151;
+        --secondary-hover: #4b5563;
+        --secondary-text: #e5e7eb;
+        --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.025em;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.card {
+    background-color: var(--card-bg);
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.phrase-container {
+    min-height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.phrase {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.4;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+
+.phrase.fade-out {
+    opacity: 0;
+}
+
+.actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn {
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #ffffff; /* Always white for contrast */
+}
+
+/* Dark mode adjustment for primary button text color if needed, but white usually works on green */
+@media (prefers-color-scheme: dark) {
+    .btn-primary {
+        color: #111827; /* Dark text on bright green looks better in dark mode? Or keep white. Let's stick to dark on bright green for better contrast in dark mode */
+        color: #064e3b; /* Dark green text */
+    }
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: var(--secondary-text);
+}
+
+.btn-secondary:hover {
+    background-color: var(--secondary-hover);
+}
+
+.toast {
+    position: fixed;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--text-color); /* Inverse of bg */
+    color: var(--bg-color); /* Inverse of text */
+    padding: 0.75rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 1;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+    z-index: 100;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.toast.hidden {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    .card {
+        padding: 2rem 1.25rem;
+    }
+
+    .phrase {
+        font-size: 1.25rem;
+    }
+    
+    .actions {
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+    }
+}
+
+/* Stadium Scoreboard Header */
+.scoreboard {
+    background-color: #1f2937;
+    color: #f3f4f6;
+    border: 4px solid #374151;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), inset 0 2px 4px 0 rgba(0, 0, 0, 0.4);
+    font-family: 'Courier New', Courier, monospace; /* Retro digital look */
+    position: relative;
+    overflow: hidden;
+}
+
+.score-display {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #374151;
+    padding-bottom: 1rem;
+}
+
+.match-info {
+    text-align: center;
+    flex-grow: 1;
+}
+
+.match-info h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #fbbf24; /* Amber for LED look */
+    text-shadow: 0 0 5px rgba(251, 191, 36, 0.5);
+}
+
+.time-display {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #ef4444; /* Red for stoppage time */
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% { opacity: 0; }
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 60px;
+}
+
+.team-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+}
+
+.score {
+    font-size: 2.5rem;
+    font-weight: bold;
+    line-height: 1;
+    color: #fbbf24;
+}
+
+/* Ticker Animation */
+.ticker-wrap {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 0.25rem 0;
+}
+
+.ticker {
+    display: inline-block;
+    animation: ticker 20s linear infinite;
+}
+
+.ticker__item {
+    display: inline-block;
+    padding: 0 2rem;
+    font-size: 0.9rem;
+    color: #10b981; /* Green LED text */
+}
+
+@keyframes ticker {
+    0% { transform: translate3d(100%, 0, 0); }
+    100% { transform: translate3d(-100%, 0, 0); }
+}
+
+@media (max-width: 480px) {
+    .match-info h1 {
+        font-size: 1rem;
+    }
+    .score {
+        font-size: 1.75rem;
+    }
+}

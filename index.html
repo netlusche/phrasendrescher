@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fußballerphrasen-Generator</title>
+    <meta name="description" content="Generiere zufällige Fußballer-Weisheiten auf Knopfdruck.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Optional: Google Fonts (Inter) with swap for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <main class="container">
+        <header class="scoreboard">
+            <div class="score-display">
+                <div class="team">
+                    <span class="team-label">HEIM</span>
+                    <span class="score">3</span>
+                </div>
+                <div class="match-info">
+                    <h1>PHRASENDRESCHER</h1>
+                    <div class="time-display">90:00 <span class="blink">+4</span></div>
+                </div>
+                <div class="team">
+                    <span class="score">3</span>
+                    <span class="team-label">GAST</span>
+                </div>
+            </div>
+            <div class="ticker-wrap">
+                <div class="ticker">
+                    <div class="ticker__item">+++ EILMELDUNG: Der Ball ist immer noch rund +++</div>
+                    <div class="ticker__item">+++ WICHTIG: Das nächste Spiel ist das schwerste +++</div>
+                    <div class="ticker__item">+++ UPDATE: Nach dem Spiel ist vor dem Spiel +++</div>
+                    <div class="ticker__item">+++ ACHTUNG: Die Null muss stehen +++</div>
+                    <div class="ticker__item">+++ LIVE: Klick für neue Weisheit +++</div>
+                </div>
+            </div>
+        </header>
+
+        <div class="card">
+            <div class="phrase-container">
+                <blockquote id="phrase-text" class="phrase">Lädt...</blockquote>
+            </div>
+            
+            <div class="actions">
+                <button id="new-phrase-btn" class="btn btn-primary">Neue Phrase</button>
+                <button id="copy-btn" class="btn btn-secondary" aria-label="Phrase kopieren">Kopieren</button>
+            </div>
+        </div>
+        
+        <div id="toast" class="toast hidden">Kopiert!</div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
