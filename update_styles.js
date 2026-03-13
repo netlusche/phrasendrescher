@@ -1,4 +1,9 @@
+const fs = require('fs');
 
+const stylesCssContent = fs.readFileSync('styles.css', 'utf8');
+
+// Replace everything with a completely new CSS
+const newCSS = `
 :root {
     /* Broadcast/Matchday Color Palette */
     --bg-color: #0B0E14; /* Deep stadium night */
@@ -497,3 +502,7 @@ body.mode-drama .btn-primary { background-color: var(--accent-red); color: white
         transform: none !important;
     }
 }
+`;
+
+fs.writeFileSync('styles.css', newCSS);
+console.log("Rewrote styles.css.");
