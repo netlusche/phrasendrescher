@@ -251,11 +251,7 @@ const phrases = [
     { text: "Ich glaube nicht, dass wir das Spiel verloren hätten, wenn es 1:1 ausgegangen wäre.", author: "Uli Hoeneß" },
 ];
 
-// DOM Elemente
-const phraseText = document.getElementById('phrase-text');
-const newPhraseBtn = document.getElementById('new-phrase-btn');
-const copyBtn = document.getElementById('copy-btn');
-const toast = document.getElementById('toast');
+
 
 // State & Modes
 const appState = {
