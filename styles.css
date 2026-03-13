@@ -57,6 +57,54 @@ body::before {
     z-index: -1;
 }
 
+/* -------------------------------------
+   DYNAMIC FLOODLIGHTS
+-------------------------------------- */
+.floodlights {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -2;
+}
+
+.beam {
+    position: absolute;
+    top: -20vh;
+    width: 90vw;
+    height: 160vh;
+    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 80%);
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    filter: blur(25px);
+    transform-origin: top center;
+    will-change: transform, opacity;
+}
+
+.beam-left {
+    left: -25vw;
+    animation: sweepLeft 15s ease-in-out infinite alternate;
+}
+
+.beam-right {
+    right: -25vw;
+    animation: sweepRight 18s ease-in-out infinite alternate;
+}
+
+@keyframes sweepLeft {
+    0% { transform: rotate(15deg); opacity: 0.3; }
+    40% { transform: rotate(35deg); opacity: 0.8; }
+    100% { transform: rotate(10deg); opacity: 0.3; }
+}
+
+@keyframes sweepRight {
+    0% { transform: rotate(-15deg); opacity: 0.3; }
+    60% { transform: rotate(-35deg); opacity: 0.8; }
+    100% { transform: rotate(-10deg); opacity: 0.3; }
+}
+
 .container {
     width: 100%;
     max-width: 800px;
