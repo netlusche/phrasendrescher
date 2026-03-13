@@ -233,6 +233,8 @@ body::before {
     padding-bottom: 0.5rem;
     scrollbar-width: none; /* Firefox */
     margin: 0.5rem 0;
+    -webkit-overflow-scrolling: touch;
+    padding-right: 1rem; /* Extra space at the end so the last pill isn't cut off by the edge */
 }
 .filter-nav::-webkit-scrollbar { display: none; }
 
@@ -248,6 +250,7 @@ body::before {
     cursor: pointer;
     white-space: nowrap;
     transition: all 0.2s ease;
+    flex-shrink: 0; /* Prevents chips from being squished */
 }
 
 .filter-chip:hover {
