@@ -294,3 +294,12 @@ h1 {
         font-size: 1.75rem;
     }
 }
+
+.author {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.7em;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--secondary-text);
+}
