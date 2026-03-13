@@ -59,7 +59,7 @@ body::before {
 
 .container {
     width: 100%;
-    max-width: 680px;
+    max-width: 1024px; /* Sufficient width for all pills on desktop */
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
@@ -233,6 +233,8 @@ body::before {
     gap: 0.5rem;
     padding: 0.5rem;
     margin: 0 0 1rem 0;
+    width: 100%;
+    min-width: 0;
 }
 .filter-nav::-webkit-scrollbar { display: none; }
 
