@@ -84,7 +84,7 @@ const phrases = [
     { text: "Respekt an den Gegner.", author: "Unbekannt" },
     { text: "Wir haben den Faden verloren.", author: "Unbekannt" },
     { text: "Wir müssen jetzt die Ärmel hochkrempeln.", author: "Unbekannt" },
-    { text: "Es gibt keine Kleinen mehr.", author: "Unbekannt" },
+    { text: "Es gibt keine Kleinen mehr.", author: "Rudi Völler" },
     { text: "Jeder muss sich in den Dienst der Mannschaft stellen.", author: "Unbekannt" },
     { text: "Das Trikot muss schwitzen.", author: "Unbekannt" },
     { text: "Wir haben uns für den Aufwand nicht belohnt.", author: "Unbekannt" },
