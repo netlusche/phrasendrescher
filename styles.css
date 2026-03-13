@@ -59,7 +59,7 @@ body::before {
 
 .container {
     width: 100%;
-    max-width: 1024px; /* Sufficient width for all pills on desktop */
+    max-width: 800px;
     margin-top: 1rem;
     display: flex;
     flex-direction: column;
