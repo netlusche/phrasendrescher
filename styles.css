@@ -76,7 +76,7 @@ body::before {
     top: -20vh;
     width: 90vw;
     height: 160vh;
-    background: linear-gradient(180deg, rgba(255,255,255,0.06) 0%, transparent 80%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.12) 0%, transparent 80%);
     clip-path: polygon(50% 0, 100% 100%, 0 100%);
     filter: blur(25px);
     transform-origin: top center;
@@ -84,25 +84,25 @@ body::before {
 }
 
 .beam-left {
-    left: -25vw;
+    left: -5vw;
     animation: sweepLeft 15s ease-in-out infinite alternate;
 }
 
 .beam-right {
-    right: -25vw;
+    right: -5vw;
     animation: sweepRight 18s ease-in-out infinite alternate;
 }
 
 @keyframes sweepLeft {
-    0% { transform: rotate(15deg); opacity: 0.3; }
-    40% { transform: rotate(35deg); opacity: 0.8; }
-    100% { transform: rotate(10deg); opacity: 0.3; }
+    0% { transform: rotate(10deg); opacity: 0.4; }
+    40% { transform: rotate(30deg); opacity: 1; }
+    100% { transform: rotate(0deg); opacity: 0.4; }
 }
 
 @keyframes sweepRight {
-    0% { transform: rotate(-15deg); opacity: 0.3; }
-    60% { transform: rotate(-35deg); opacity: 0.8; }
-    100% { transform: rotate(-10deg); opacity: 0.3; }
+    0% { transform: rotate(-10deg); opacity: 0.4; }
+    60% { transform: rotate(-30deg); opacity: 1; }
+    100% { transform: rotate(0deg); opacity: 0.4; }
 }
 
 .container {
