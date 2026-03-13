@@ -1,4 +1,4 @@
-# Phrasendrescher 2.0 (v1.2.0) - Die Live-Übertragung
+# Phrasendrescher 1.2 - Die Live-Übertragung
 
 Ein interaktiver "Phrasendrescher" für alle Fußballfans, der das Stadion direkt auf deinen Bildschirm bringt. Drücke den Knopf und lass dich von tiefgründigen Weisheiten wie "Mailand oder Madrid - Hauptsache Italien!" im TV-Broadcast-Look inspirieren.
 
